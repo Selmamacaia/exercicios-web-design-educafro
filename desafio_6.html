@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Número na Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e79beb86;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #cf89ca;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+      
+
+
+        h1 {
+            color:#32132a6f;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid hsl(327, 40%, 55%);
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #b30086;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #600649;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Maior Número na Lista</h1>
+        <form id="numeroForm">
+            <label for="numeros">Digite os números separados por vírgula:</label>
+            <input type="text" id="numeros" name="numeros" required>
+            <br>
+            <button type="submit">Encontrar Maior Número</button>
+        </form>
+        <div id="resultado" class="resultado">
+            <!-- Aqui será mostrado o resultado -->
+        </div>
+    </div>
+  
+
+    <script>
+        document.getElementById('numeroForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Pegar os valores dos números do input e transformá-los em um array de números
+            var numeros = document.getElementById('numeros').value.split(',').map(Number);
+
+            // Função para encontrar o maior número
+            function maiorNumero(numeros) {
+                return Math.max(...numeros);
+            }
+
+            // Encontrar o maior número e exibir o resultado
+            var resultadoDiv = document.getElementById('resultado');
+            var maior = maiorNumero(numeros);
+            resultadoDiv.textContent = 'O maior número é: ' + maior;
+        });
+
+    </script>
+</body>
+
+</html>

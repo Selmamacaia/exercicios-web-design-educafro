@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuste de Tamanho de Fonte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(178, 185, 41);
+            text-align: center;
+            width: 300px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0ae156;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        button:hover {
+            background-color: #1eb300a1;
+        }
+        p{
+            text-align: justify;
+        }
+        span{
+            color: #0ae156;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+      
+        <h1>Ajuste de Tamanho de Fonte</h1>
+        <div class="buttons">
+            <button id="aumentarBtn">+</button>
+            <button id="diminuirBtn">-</button>
+        </div>
+        <p>
+            Na EducafroTech damos a oportunidade de pessoas sem conhecimemtos na área de TI mas que pretendem ingressar na área,a desenvolver habilidades que facilitam a sua inserção no mercado de TI
+            Nossos cursos são feitos sob medida para ajudar cada persona a dominar habilidades de programação e idem.Junte-se a nós e vamos construir um futuro mais inclusivo e diversificado juntos <span>SOMOS TODOS EDUCAFROTECH.</span>
+        </p>
+    </div>
+    
+
+    <script>
+        document.getElementById('aumentarBtn').addEventListener('click', function () {
+            aumentarFonte();
+        });
+
+        document.getElementById('diminuirBtn').addEventListener('click', function () {
+            diminuirFonte();
+        });
+
+        function aumentarFonte() {
+            var paragrafos = document.getElementsByTagName('p');
+            for (var i = 0; i < paragrafos.length; i++) {
+                var tamanhoAtual = window.getComputedStyle(paragrafos[i], null).getPropertyValue('font-size');
+                var novoTamanho = parseFloat(tamanhoAtual) + 2;
+                paragrafos[i].style.fontSize = novoTamanho + 'px';
+            }
+        }
+
+        function diminuirFonte() {
+            var paragrafos = document.getElementsByTagName('p');
+            for (var i = 0; i < paragrafos.length; i++) {
+                var tamanhoAtual = window.getComputedStyle(paragrafos[i], null).getPropertyValue('font-size');
+                var novoTamanho = parseFloat(tamanhoAtual) - 2;
+                paragrafos[i].style.fontSize = novoTamanho + 'px';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

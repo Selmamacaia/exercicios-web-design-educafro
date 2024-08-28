@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(https://i.pinimg.com/236x/59/19/26/591926a3eb106ee1851a1e574fec0edb.jpg);
+           
+        }
+        
+        .graffiti-text {
+            font-family: 'Permanent Marker', cursive; 
+            color: #ff29a9; /* Texto branco para contraste */
+            text-shadow: 2px 2px 4px #ff0101; 
+            text-align: center;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="graffiti-text">Olá Mundo (^_^)</h1>
+</body>
+</html>
